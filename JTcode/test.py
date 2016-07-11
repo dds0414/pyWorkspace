@@ -3,6 +3,7 @@ from recommend import sim_distance
 from recommend import sim_pearson
 from recommend import topMatches
 from recommend import getRecommendations
+import feedparser
 
 
 # print sim_distance(critics, "Lisa Rose", "Gene Seymour")

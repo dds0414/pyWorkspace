@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html data-ng-app="book" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div ng-controller="indexCtrl">
+    <div>
+        添加词条：<input ng-model="keyValue" type="text">
+        <input type="button" value="add" ng-click="add()">
+    </div>
+    <div>
+        <div>已添加词条</div>
+        <div>
+            <div style="float: left;margin-right: 10px;" ng-repeat="item in list track by $index" ng-click="getDList(item._id)">{{ item.name }}</div>
+        </div>
+    </div>
+
+    <div style="clear: both">
+        <div>词条列表</div>
+        <div ng-repeat="item in Dlist track by $index">
+            <div ng-click="down(item.title,item.desc)">书名 ：{{ item.title }}</div>
+            <div>星级 ：{{ item.star }}</div>
+            <div>描述 ：{{ item.desc }}</div>
+        </div>
+
+    </div>
+
+    <div style="clear: both">
+        <div>下载列表</div>
+        <div ng-repeat="item in Downlist track by $index">
+            <a target="_blank" ng-href="{{ item.href }}" >{{ item.title }}</a>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="javascripts/angular-1.5.js"></script>
+<script src="javascripts/index.js"></script>
+</body>
+</html>
